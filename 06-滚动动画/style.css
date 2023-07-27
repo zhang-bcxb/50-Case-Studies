@@ -1,0 +1,54 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #efedd6;
+  display: flex;
+  /*设置主轴方向为y轴*/
+  flex-direction: column;
+  /*水平垂直居中*/
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  /* 隐藏水平滑动条 */
+  overflow-x: hidden;
+}
+
+/* 标题 */
+h1 {
+  margin: 10px;
+}
+
+/* 内容盒子 */
+.box {
+  background-color: steelblue;
+  color: #fff;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 400px;
+  height: 200px;
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
+  /* 所有盒子都平移（从左侧进入） */
+  transform: translateX(400%);
+  transition: transform 0.4s ease;
+}
+
+/* 偶数位置的元素（从右侧进入） */
+.box:nth-of-type(even) {
+  transform: translateX(-400%);
+}
+
+/* 盒子显示，不移动 */
+.box.show {
+  transform: translateX(0);
+}
+
+/* 盒子内的文字 */
+.box h2 {
+  font-size: 45px;
+}

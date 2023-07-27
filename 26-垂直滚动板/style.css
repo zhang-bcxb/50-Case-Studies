@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+}
+
+/* 内容大盒子 */
+.slider-container {
+  /* 相对定位 */
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* 左边盒子 */
+.left-slide {
+  height: 100%;
+  width: 35%;
+  /* 绝对定位 */
+  position: absolute;
+  top: 0;
+  /* js 到时候会向上滑动 3个盒子的距离 */
+  left: 0;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 设置左侧文字(盒子都是向下排列,不是压住的) */
+.left-slide>div {
+  height: 100%;
+  width: 100%;
+  /* 水平垂直居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #fff
+}
+
+.left-slide h1 {
+  font-size: 40px;
+  margin-bottom: 10px;
+  margin-top: -30px;
+}
+
+/* 右边盒子 */
+.right-slide {
+  height: 100%;
+  /* 绝对定位 */
+  position: absolute;
+  top: 0;
+  left: 35%;
+  width: 65%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* 设置背景图片(图片都是向下排列,不是压住的) */
+.right-slide>div {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+  height: 100%;
+  width: 100%;
+}
+
+/* 滑动按钮 */
+button {
+  background-color: #fff;
+  border: none;
+  color: #aaa;
+  cursor: pointer;
+  font-size: 16px;
+  padding: 15px;
+  /* 定位 */
+  position: absolute;
+  /* 整个右边宽度 */
+  left: 35%;
+  /* 50vh */
+  top: 50%;
+  z-index: 100;
+}
+
+/* 被触摸时的字体颜色 */
+button:hover {
+  color: #222;
+}
+
+button:focus {
+  outline: none;
+}
+
+/* 下按钮 */
+button.down-button {
+  /* 向左平移自身宽度 */
+  transform: translateX(-100%);
+  /* 左边设置圆角 */
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+/* 上按钮 */
+button.up-button {
+  /* 向上平移自身高度 */
+  transform: translateY(-100%);
+  /* 右边设置圆角 */
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+}

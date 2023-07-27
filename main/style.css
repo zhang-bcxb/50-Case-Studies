@@ -1,0 +1,82 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* 屏幕样式 */
+.container {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: auto;
+  /* transition: all 0.3s ease; */
+}
+
+/* 屏幕动画 */
+.container-animation {
+  transition: all 0.5s ease;
+}
+
+/* 屏幕 */
+.section {
+  width: 100%;
+  height: 100vh;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.section-1 {
+  background-color: rebeccapurple;
+}
+
+.section-2 {
+  background-color: skyblue;
+}
+
+.section-3 {
+  background-color: firebrick;
+}
+
+.section-4 {
+  background-color: orange;
+}
+
+.section-5 {
+  background-color: rosybrown;
+}
+
+/* 侧边按钮样式 */
+.controls {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  list-style: none;
+}
+
+.controls li {
+  width: 12px;
+  height: 12px;
+  border: 1px solid white;
+  cursor: pointer;
+  border-radius: 50%;
+  transition: all 0.5s;
+}
+
+.controls li {
+  margin-top: 16px;
+}
+
+.controls li.active {
+  background-color: #fff;
+}

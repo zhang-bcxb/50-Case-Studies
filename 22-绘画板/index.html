@@ -1,0 +1,29 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>画板</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- 画布 -->
+  <canvas id="canvas" width="800" height="600"></canvas>
+  <!-- 工具栏 -->
+  <div class="toolbox">
+    <!-- 控制画笔的粗细 -->
+    <button id="decrease">-</button>
+    <span id="size">10</span>
+    <button id="increase">+</button>
+    <!-- 控制画笔的颜色 -->
+    <input type="color" id="color">
+    <!-- 清除画布 -->
+    <button id="clear">X</button>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>

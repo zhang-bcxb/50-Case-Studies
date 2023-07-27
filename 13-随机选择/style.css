@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #2b88f0;
+  /* 水平垂直居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 提示文本 */
+h3 {
+  color: #fff;
+  margin: 10px 0 20px;
+  text-align: center;
+}
+
+/* 大盒子 */
+.container {
+  width: 500px;
+}
+
+/* 文本域 */
+textarea {
+  border: 0;
+  display: block;
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  margin: 0 0 20px;
+  font-size: 16px;
+}
+
+/* 文本域获得焦点,去除轮廓线 */
+textarea:focus {
+  outline: none;
+}
+
+/* 分割后的小盒子 */
+.tag {
+  background-color: #f0932b;
+  color: #fff;
+  border-radius: 50px;
+  padding: 10px 20px;
+  margin: 0 5px 10px 0;
+  font-size: 14px;
+  /* 设置成行内块盒子 */
+  display: inline-block;
+}
+
+/* 被随机选中的小盒子 */
+.tag.highlight {
+  background-color: #273c75;
+}

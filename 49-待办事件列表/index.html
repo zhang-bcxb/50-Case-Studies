@@ -1,0 +1,27 @@
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>代办事项列表</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- 标题 -->
+  <h1>Todo List</h1>
+  <form id="form">
+    <!-- 自动完成允许浏览器预测对字段的输入。
+      当用户在字段开始键入时，浏览器基于之前键入过的值，应该显示出在字段中填写的选项。 
+       autocomplete="off" 用于禁用浏览器自动完成功能
+    -->
+    <input type="text" class="input" id="input" placeholder="输入完成后回车" autocomplete="off">
+    <!-- todo 项 -->
+    <ul class="todos" id="todos"></ul>
+  </form>
+  <small>点击鼠标左键完成<br>点击鼠标右键删除</small>
+</body>
+<script src='script.js'></script>
+
+</html>

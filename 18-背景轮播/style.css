@@ -1,0 +1,89 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  /* 背景定位：将背景图片在容器中水平和垂直居中显示 */
+  background-position: center center;
+  background-size: cover;
+  transition: 0.4s;
+}
+
+/* 背景遮罩 */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: -1;
+}
+
+/* 大盒子 */
+.slider-container {
+  height: 70vh;
+  width: 70vw;
+  /* 相对定位 */
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+
+/* 图片盒子 */
+.slide {
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  background-position: center center;
+  background-size: cover;
+  /* 使图片和背景重合，定位图片的显示位置 */
+  /* 计算公式：（100vh（总高度）- 70vh（父盒子的高度））/2 */
+  position: absolute;
+  top: -15vh;
+  left: -15vw;
+  transition: 0.4 ease;
+  z-index: 1;
+}
+
+/* 图片选中 */
+.slide.active {
+  opacity: 1;
+}
+
+/* 左右按钮 */
+.arrow {
+  /* 垂直居中 */
+  position: fixed;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: transparent;
+  color: #fff;
+  font-size: 30px;
+  border: 2px solid orange;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.arrow:focus {
+  outline: none;
+}
+
+/* 左边按钮 */
+.left-arrow {
+  /* 动态计算 */
+  left: calc(15vw - 65px);
+}
+
+/* 右边按钮 */
+.right-arrow {
+  right: calc(15vw - 65px);
+}

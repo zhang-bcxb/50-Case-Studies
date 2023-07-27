@@ -1,0 +1,31 @@
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片幻灯片</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="carousel">
+    <!-- 图片容器:图片水平排列,移动该盒子就能实现轮播 -->
+    <div class="image-container" id="imgs">
+      <img src="img/1.avif" alt="first-image">
+      <img src="img/2.avif" alt="second-image" />
+      <img src="img/3.avif" alt="third-image" />
+      <img src="img/4.avif" alt="fourth-image" />
+    </div>
+
+    <!-- 跳转按钮 -->
+    <div class="buttons-container">
+      <button id="left" class="btn">上一个</button>
+      <button id="right" class="btn">下一个</button>
+    </div>
+  </div>
+</body>
+
+<script src="script.js"></script>
+
+</html>

@@ -1,0 +1,87 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #efefbb;
+  background: linear-gradient(to right, #d4d3dd, #efefbb);
+
+  /* 水平垂直居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+}
+
+h1 {
+  /* 字符间隔 */
+  letter-spacing: 10px;
+}
+
+/* 卡片大盒子 */
+.poke-container {
+  display: flex;
+  /* 支持换行 */
+  flex-wrap: wrap;
+  /* 水平平分 */
+  justify-content: space-between;
+  /* 垂直居中 */
+  align-items: center;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+/* 最后一排对齐 */
+/* 120 + 20*2 + 10*2 = 180 */
+  /* width: 361px; */
+  /* (6-2)*180 = 720 */
+/* .poke-container::after {
+  content: "";
+  height: 0;
+  width: 720px;
+} */
+
+/* 卡片盒子 */
+.pokemon {
+  background-color: #eee;
+  border-radius: 10px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+}
+
+/* 图片盒子 */
+.pokemon .img-container {
+  background-color: rgba(207, 19, 19, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+}
+
+.pokemon .img-container img {
+  max-width: 90%;
+
+  margin-top: 20px;
+}
+
+/* 卡片信息 */
+.pokemon .info {
+  margin-top: 20px;
+}
+
+/* 卡片序号 */
+.pokemon .info .number {
+  background-color: rgba(0, 0, 0, 0.1);
+  padding: 5px 10px;
+  border-radius: 10px;
+  font-size: 0.8em;
+}
+
+/* 卡片名字 */
+.pokemon .info .name {
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}

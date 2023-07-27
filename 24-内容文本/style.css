@@ -1,0 +1,143 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* 特殊标签的样式 */
+mark {
+  color: #cf2626;
+  padding: 2px 5px;
+  background-color: transparent;
+}
+
+body {
+  height: 100vh;
+  overflow: hidden;
+  /* 水平垂直居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  background-image:
+    radial-gradient(49% 81% at 45% 47%, rgba(157, 80, 4, .270588) 0, rgba(7, 58, 255, 0) 100%),
+    radial-gradient(113% 91% at 17% -2%, #c95011 1%, rgba(220, 78, 78, 0) 99%),
+    radial-gradient(142% 91% at 83% 7%, #edd509 1%, rgba(255, 0, 0, 0) 99%),
+    radial-gradient(142% 91% at -6% 74%, #a30633 1%, rgba(255, 0, 0, 0) 99%),
+    radial-gradient(142% 91% at 111% 84%, #ef710e 0, #ed0707 100%);
+}
+
+/* 卡片盒子 */
+.card {
+  width: 350px;
+  overflow: hidden;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+}
+
+/* 卡片头部 */
+.card>.card-header {
+  height: 180px;
+}
+
+/* 图片 */
+.card>.card-header>img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}
+
+/* 卡片内容 */
+.card>.card-content {
+  padding: 25px;
+  background-color: #ffffff;
+}
+
+/* 卡片标题 */
+.card>.card-content>.card-title {
+  height: 35px;
+  color: #3e3e3f;
+}
+
+/* 卡片信息 */
+.card>.card-content>.card-message {
+  color: #464646;
+  margin: 10px 0 20px;
+  line-height: 1.5;
+}
+
+/* 卡片作者 */
+.card>.card-content>.card-author {
+  display: flex;
+  align-items: center;
+}
+
+/* 卡片作者-头像 */
+.card>.card-content>.card-author>.card-author-avatar {
+  width: 60px;
+  height: 60px;
+  overflow: hidden;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+/* 卡片作者-触摸头像 */
+.card>.card-content>.card-author>.card-author-avatar:hover {
+  /* 666turn 表示旋转角度为 666 倍的完整圆（即 666 圈） */
+  transform: rotate(666turn);
+  /* 延迟时间 */
+  transition-delay: 0.5s;
+  transition-property: all;
+  transition-duration: 59s;
+  /* 速度曲线 */
+  transition-timing-function: cubic-bezier(.34, 0, .84, 1);
+}
+
+/* 卡片作者-信息 */
+.card>.card-content>.card-author>.card-author-info {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  margin-left: 15px;
+  flex-direction: column;
+}
+
+/* 卡片作者-信息-作者名称 */
+.card>.card-content>.card-author>.card-author-info>.card-author-name {
+  color: #696969;
+}
+
+/* 卡片作者-信息-日期 */
+.card>.card-content>.card-author>.card-author-info>.card-author-date {
+  color: #a5a4a4;
+  margin-top: 5px;
+}
+
+/* 背景加载动画 */
+.animated-bg {
+  background-image: linear-gradient(to right, #edeeee, #c2c5c2, #aaa9aa, #7d7d7e);
+  background-size: 200% 100%;
+  animation: bgPos 1.5s linear infinite;
+}
+
+/* 文本加载动画 */
+.animated-bg-text {
+  border-radius: 50px;
+  display: inline-block;
+  width: 100%;
+  height: 10px;
+}
+
+@keyframes bgPos {
+  0% {
+    background-position: 50% 0;
+  }
+
+  100% {
+    background-position: -150% 0;
+  }
+}

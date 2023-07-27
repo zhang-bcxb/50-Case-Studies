@@ -1,0 +1,114 @@
+:root {
+  --line-border-fill: #3498db;
+  --line-border-empty: #e0e0e0
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f6f7fb;
+  /*水平垂直居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 大盒子容器 */
+.container {
+  /* 行内元素水平居中 */
+  text-align: center;
+}
+
+/* 进度条盒子 */
+.progress_container {
+  /*子绝父相*/
+  position: relative;
+  display: flex;
+  /*弹性盒子，子盒子平分宽度*/
+  justify-content: space-between;
+  margin-bottom: 30px;
+  max-width: 100%;
+  width: 350px;
+}
+
+/*灰色进度线*/
+.progress_container::before {
+  content: '';
+  background-color: var(--line-border-empty);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  width: 100%;
+  z-index: -1;
+}
+
+/*蓝色进度线*/
+.progress {
+  background-color: var(--line-border-fill);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+  height: 4px;
+  /*起始宽度*/
+  width: 0%;
+  z-index: -1;
+}
+
+/*数字盒子*/
+.circle {
+  background-color: #fff;
+  color: #999;
+  border-radius: 50%;
+  height: 30px;
+  width: 30px;
+  /*水平垂直居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*边框线 */
+  border: 3px solid var(--line-border-empty);
+  transition: all 0.4s ease;
+}
+
+/*被激活的样式*/
+.circle.active {
+  border-color: var(--line-border-fill);
+}
+
+/*两个按钮*/
+.btn {
+  background-color: var(--line-border-fill);
+  color: #fff;
+  border: 0;
+  border-radius: 6px;
+  cursor: pointer;
+  font-family: inherit;
+  padding: 8px 30px;
+  margin: 5px;
+  font-size: 14px;
+}
+
+/*按钮被激活*/
+.btn:active {
+  transform: scale(0.98);
+}
+
+/*按钮获取焦点时移除默认的外边框样式*/
+.btn:focus {
+  outline: 0;
+}
+
+/*按钮禁用的样式*/
+.btn:disabled {
+  background-color: var(--line-border-empty);
+  /*禁止点击的样式*/
+  cursor: not-allowed;
+}

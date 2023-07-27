@@ -1,0 +1,123 @@
+div.card {
+  font-family: 'Raleway', Arial, sans-serif;
+  color: #fff;
+  position: relative;
+  overflow: hidden;
+  margin: 10px;
+  /* min-width: 220px;
+  max-width: 330px;
+  max-height: 220px;
+  width: 100%; */
+  width: 330px;
+  height: 220px;
+  background: #000000;
+  text-align: center;
+  border-radius: 15px;
+}
+
+div.card img {
+  object-fit: cover;
+  /* object-position: center center; */
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: opacity 0.35s;
+  transition: opacity 0.35s;
+}
+
+
+div.card div {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  padding: 3em 3em;
+  width: 100%;
+  height: 100%;
+}
+
+div.card div::before {
+  position: absolute;
+  top: 30px;
+  right: 50%;
+  bottom: 30px;
+  left: 50%;
+  border-left: 1px solid rgba(255, 255, 255, 0.8);
+  border-right: 1px solid rgba(255, 255, 255, 0.8);
+  content: '';
+  opacity: 0;
+  background-color: #ffffff;
+  -webkit-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+div.card h2,
+div.card h3,
+div.card a {
+  margin: 0 0 5px;
+  opacity: 0;
+  -webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
+  transition: opacity 0.35s, -webkit-transform 0.35s, -moz-transform 0.35s, -o-transform 0.35s, transform 0.35s;
+}
+
+div.card h2 {
+  word-spacing: -0.15em;
+  font-weight: 300;
+  text-transform: uppercase;
+  -webkit-transform: translate3d(0%, 100%, 0);
+  transform: translate3d(0%, 100%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+div.card h3 {
+  font-weight: 200;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}
+
+div.card a {
+  left: 0;
+  right: 0;
+  top: 170px;
+  bottom: 0;
+  position: absolute;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+div.card:hover img {
+  opacity: 0.35;
+}
+
+div.card:hover div h2 {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+div.card:hover div h3 {
+  opacity: 0.8;
+  -webkit-transition-delay: 0.6s;
+  transition-delay: 0.6s;
+}
+
+div.card:hover div a {
+  opacity: 1;
+  -webkit-transform: translate3d(0%, 0%, 0);
+  transform: translate3d(0%, 0%, 0);
+  -webkit-transition-delay: 0.3s;
+  transition-delay: 0.3s;
+}
+
+div.card:hover div::before {
+  background: rgba(255, 255, 255, 0);
+  left: 30px;
+  right: 30px;
+  opacity: 1;
+  -webkit-transition-delay: 0s;
+  transition-delay: 0s;
+}

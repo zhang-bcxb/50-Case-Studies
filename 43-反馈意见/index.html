@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>反馈意见</title>
+  <link rel="stylesheet" href="./style.css">
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+</head>
+
+<body>
+  <div class="panel-container" id="panel">
+    <strong>反馈意见，选择你的心情</strong>
+    <!-- active 表示选中状态 -->
+    <div class="ratings-container">
+      <div class="rating">
+        <img src="img/悲伤.png" alt="">
+        <small>不开心</small>
+      </div>
+      <div class="rating">
+        <img src="img/一般.png" alt="">
+        <small>一般</small>
+      </div>
+      <div class="rating active">
+        <img src="img/开心.png" alt="">
+        <small>开心</small>
+      </div>
+    </div>
+    <!-- 提交按钮 -->
+    <button class="btn" id="send">发送心情状态</button>
+  </div>
+</body>
+<script src="./script.js"></script>
+
+</html>

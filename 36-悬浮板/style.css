@@ -1,0 +1,41 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #111;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.container {
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 支持换行 */
+  flex-wrap: wrap;
+  max-width: 400px;
+}
+
+/* 小盒子 */
+.square {
+  background-color: #1d1d1d;
+  box-shadow: 0 0 2px #000;
+  /* 一个盒子占据 20px * 20px */
+  height: 16px;
+  width: 16px;
+  margin: 2px;
+  transition: 2s ease;
+}
+
+/* 触摸的时候，修改持续时间 */
+.square:hover {
+  /* 过渡持续时间 */
+  transition-duration: 0s;
+}

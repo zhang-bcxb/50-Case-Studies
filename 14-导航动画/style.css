@@ -1,0 +1,107 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #eafbff;
+  /* 背景渐变 从上到下 */
+  background-image: linear-gradient(to bottom, #eafbff 0%, #eafbff 50%, #5290f9 50%, #5290f9 100%);
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+nav {
+  background-color: #fff;
+  padding: 20px;
+  /* 没有展开时的宽度 */
+  width: 80px;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+  transition: width 0.6s linear;
+  /* 隐藏导航条 */
+  overflow-x: hidden;
+}
+
+/* 展开导航栏 */
+nav.active {
+  width: 350px;
+}
+
+/* 导航栏盒子 */
+nav ul {
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  width: 0;
+  transition: width 0.6s linear;
+}
+
+nav.active ul {
+  width: 100%;
+}
+
+/* 没有展开时的导航栏 */
+nav ul li {
+  transform: rotateY(0deg);
+  opacity: 0;
+  transition: transform 0.6s linear, opacity 0.6s linear;
+}
+
+/* 展开时的导航栏 */
+nav.active ul li {
+  opacity: 1;
+  transform: rotateY(360deg);
+}
+
+nav ul a {
+  position: relative;
+  color: #000;
+  text-decoration: none;
+  margin: 0 10px;
+}
+
+/* 切换按钮 */
+.icon {
+  background-color: #fff;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+/* 切换按钮的两条线 */
+.icon .line {
+  background-color: #5290f9;
+  height: 2px;
+  width: 20px;
+  position: absolute;
+  top: 10px;
+  left: 5px;
+  transition: transform 0.6s linear;
+}
+
+.icon .line2 {
+  top: auto;
+  bottom: 10px;
+}
+
+/* 展开时的线，显示叉叉 */
+nav.active .icon .line1 {
+  /* 765 = 360 * 2(转两圈) + 45 */
+  transform: rotate(-765deg) translateY(5.5px)
+}
+
+nav.active .icon .line2 {
+  transform: rotate(765deg) translateY(-5.5px)
+}

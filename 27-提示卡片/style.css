@@ -1,0 +1,68 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rebeccapurple;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 按钮 */
+.btn {
+  background-color: #ffffff;
+  color: rebeccapurple;
+
+  font-weight: bold;
+  padding: 1rem;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+.btn:focus {
+  outline: none;
+}
+
+/* 按钮被触摸的样式 */
+.btn:active {
+  transform: scale(0.98);
+}
+
+/* 大消息盒子 */
+#toasts {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  /* 设置方向 */
+  flex-direction: column;
+}
+
+/* 消息盒子 */
+.toast {
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 1rem 2rem;
+  margin: 0.5rem;
+}
+
+/* 信息类的消息 */
+.toast.info {
+  color: rebeccapurple;
+}
+
+/* 成功的消息 */
+.toast.success {
+  color: green;
+}
+
+/* 错误的消息 */
+.toast.error {
+  color: red;
+}

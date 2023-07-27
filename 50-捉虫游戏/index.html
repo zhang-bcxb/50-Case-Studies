@@ -1,0 +1,61 @@
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>捉虫游戏</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body id="body">
+  <!-- 第一屏-开始页面 -->
+  <div class="screen">
+    <h1>捉虫</h1>
+    <button class="btn" id="start-btn">开始游戏</button>
+  </div>
+
+  <!-- 第二屏-昆虫选择页面 -->
+  <div class="screen">
+    <h1>哪个是你最喜欢的虫子</h1>
+    <ul class="insects-list">
+      <li>
+        <button class="choose-insect-btn">
+          <p>苍蝇</p>
+          <img src="img/苍蝇.png" alt="cy">
+        </button>
+      </li>
+      <li>
+        <button class="choose-insect-btn">
+          <p>蚊子</p>
+          <img src="img/蚊子.png" alt="wz">
+        </button>
+      </li>
+      <li>
+        <button class="choose-insect-btn">
+          <p>蜘蛛</p>
+          <img src="img/蜘蛛.png" alt="zz">
+        </button>
+      </li>
+      <li>
+        <button class="choose-insect-btn">
+          <p>蟑螂</p>
+          <img src="img/蟑螂.png" alt="zl">
+        </button>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 第三屏-游戏界面 -->
+  <div class="screen game-container" id="game-container">
+    <h3 id="time" class="time">Time:00:00</h3>
+    <h3 id="score" class="score">Score:0</h3>
+    <h5 id="message" class="message">
+      你气不气？<br>
+      你正在玩一个不会结束的游戏！！
+    </h5>
+  </div>
+</body>
+<script src="script.js"></script>
+
+</html>

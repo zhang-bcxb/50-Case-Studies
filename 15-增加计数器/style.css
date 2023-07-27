@@ -1,0 +1,37 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #8e44ad;
+  color: #fff;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 卡片盒子 */
+.counter-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 30px 50px;
+}
+
+/* 数字 */
+.counter {
+  font-size: 60px;
+  margin-top: 10px;
+}
+
+/* 媒体查询 */
+@media(max-width:580px) {
+  body {
+    flex-direction: column;
+  }
+}

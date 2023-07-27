@@ -1,0 +1,143 @@
+* {
+  box-sizing: border-box;
+}
+
+/* 白色背景 */
+:root {
+  --primary-color: #000;
+  --secondary-color: #fff;
+}
+
+html {
+  transition: all 0.5s ease-in;
+}
+
+/* 黑色背景 */
+html.dark {
+  --primary-color: #fff;
+  --secondary-color: #333;
+}
+
+html.dark {
+  background-color: #111;
+  color: var(--primary-color);
+}
+
+body {
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 切换按钮 */
+.toggle {
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border: 0;
+  border-radius: 4px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 100px;
+}
+
+.toggle:focus {
+  outline: none;
+}
+
+/* 内容盒子 */
+.clock-container {
+  /* 垂直 */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 时钟盒子 */
+.clock {
+  position: relative;
+  width: 200px;
+  height: 200px;
+
+}
+
+/* 针 */
+.needle {
+  background-color: var(--primary-color);
+  position: absolute;
+  top: 50%;
+  left: 50%; 
+  width: 3px;
+  transform-origin: bottom center;
+  transition: all 0.5s ease-in;
+}
+
+/* 时针 */
+.needle.hour {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 65px;
+}
+
+/* 分针 */
+.needle.minute {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+}
+
+/* 秒针 */
+.needle.second {
+  transform: translate(-50%, -100%) rotate(0deg);
+  height: 100px;
+  background-color: #e74c3c;
+}
+
+/* 中心点 */
+.center-point::after {
+  content: '';
+  border-color: var(--primary-color);
+  width: 5px;
+  height: 5px;
+  /* 定位水平垂直居中 */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+
+}
+
+/* 时间 */
+.time {
+  font-size: 60px;
+}
+
+/* 日期 */
+.date {
+  color: #aaa;
+  font-size: 14px;
+  /* 字符之间的间隔 */
+  letter-spacing: 0.3px;
+  /* 文字转大写 */
+  text-transform: uppercase;
+}
+
+.date .circle {
+  background-color: var(--primary-color);
+  color: var(--secondary-color);
+  border-radius: 50%;
+  height: 18px;
+  width: 18px;
+  /*行内的弹性盒子容器*/
+  display: inline-flex;
+  /* 水平垂直居中 */
+  align-items: center;
+  justify-content: center;
+  line-height: 18px;
+  transition: all 0.5s ease-in;
+  font-size: 12px;
+}

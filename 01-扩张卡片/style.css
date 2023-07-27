@@ -1,0 +1,60 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*水平垂直居中*/
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/*父容器*/
+.container {
+  display: flex;
+  width: 90vw;
+}
+
+/*每个面板的样式*/
+.panel {
+  background-size: cover;
+  background-position: center;
+  height: 80vh;
+  border-radius: 50px;
+  color: rgb(161, 27, 27);
+  cursor: pointer;
+  /* 平分盒子的宽度 */
+  flex: 0.5;
+  /* 盒子之间的间距 */
+  margin: 10px;
+  /*子绝父相*/
+  position: relative;
+  transition: all 700ms ease-in;
+}
+
+/* 面板内的文字 */
+.panel h3 {
+  font-size: 24px;
+  position: absolute;
+  bottom: 20px;
+  left: 20px;
+  margin: 0;
+  opacity: 0;
+}
+
+/*面板被点击时的效果*/
+.panel.active {
+  flex: 5;
+}
+
+.panel.active h3 {
+  opacity: 1;
+  transition: opacity .7s ease-in-out .3s;
+}
+
+.panel:hover {
+  padding-right: 40px
+}

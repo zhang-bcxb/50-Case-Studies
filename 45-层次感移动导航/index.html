@@ -1,0 +1,51 @@
+<html lang="zh">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>移动导航</title>
+  <!-- 引入图标库 -->
+  <link href="https://cdn.bootcdn.net/ajax/libs/font-awesome/5.14.0/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <!-- 内容区域 -->
+  <button class="nav-btn open-btn">
+    <i class="fas fa-bars"></i>
+  </button>
+  <img src="logo.jpg" alt="" class="logo">
+  <p class="text">移动导航a</p>
+
+  <!-- 导航栏 -->
+  <div class="nav nav-black ">
+    <div class="nav nav-red">
+      <div class="nav nav-white">
+        <!-- 关闭按钮 -->
+        <button class="nav-btn close-btn">
+          <i class="fas fa-times"></i>
+        </button>
+        <!-- 头像 -->
+        <img src="logo.jpg" alt="" class="logo">
+        <!-- 导航选项 -->
+        <ul class="list">
+          <li><a href="#">Teams</a></li>
+          <li><a href="#">Locations</a></li>
+          <li><a href="#">Life at </a></li>
+          <li>
+            <ul>
+              <li><a href="#">culture memo</a></li>
+              <li><a href="#">Work life balance</a></li>
+              <li><a href="#">Inclusion & diversity</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="./script.js"></script>
+
+</html>

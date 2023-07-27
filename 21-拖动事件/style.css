@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: steelblue;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+/* 存在拖拽的盒子 */
+.empty {
+  height: 150px;
+  width: 150px;
+  margin: 10px;
+  border: solid 3px black;
+  background: white;
+}
+
+/* 可拖拽的盒子 */
+.fill {
+  background-image: url('img.jpg');
+  height: 145px;
+  width: 145px;
+  cursor: pointer;
+}
+
+/* 开始拖拽时，可拖拽的盒子样式*/
+.hold {
+  border: solid 5px #ccc;
+}
+
+/* 拖拽时，触碰到空盒子 */
+.hovered {
+  background-color: #333;
+  border-color: white;
+  border-style: dashed;
+}
+
+/* 媒体查询 */
+@media(max-width:800px) {
+  body {
+    flex-direction: column;
+  }
+}

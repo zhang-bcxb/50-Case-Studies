@@ -1,0 +1,29 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  /*水平垂直居中*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.bg {
+  width: 100%;
+  height: 100%;
+  /* background: pink; */
+  background-image: url('https://picsum.photos/1920/1080?random=1');
+  /*模糊效果，0表示无模糊效果*/
+  filter: blur(0);
+  position: absolute;
+  z-index: -1;
+}
+
+.loading-text {
+  font-size: 50px;
+  color: rgb(192, 29, 29);
+}

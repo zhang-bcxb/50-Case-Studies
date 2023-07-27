@@ -1,0 +1,144 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #232425;
+  overflow: hidden;
+  margin: 0;
+}
+
+/*大盒子*/
+.container {
+  /* background-color: #fafafa; */
+  background-image: url('https://picsum.photos/1920/1080?random=1');
+  width: 100vw;
+  min-height: 100vh;
+  /* 设置旋转的中心点：左上角 */
+  transform-origin: top left;
+  transition: transform 0.5s linear;
+}
+
+/* 显示菜单 */
+.container.show-nav {
+  /*逆时针旋转20度*/
+  transform: rotate(-20deg);
+}
+
+/*页面内容*/
+.content {
+  width: 100vw;
+  height: 100%;
+  /* 水平垂直居中 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fafafa;
+}
+
+/*菜单显示按钮盒子*/
+.circle-container {
+  /*固定定位*/
+  position: fixed;
+  /*隐藏一部分按钮*/
+  top: -100px;
+  left: -100px;
+}
+
+/* 圆形按钮 */
+.circle-container .circle {
+  background: #ff7979;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  position: relative;
+  transition: transform 0.5s linear;
+}
+
+/*显示导航栏时，逆时针旋转 70 度*/
+.container.show-nav .circle {
+  transform: rotate(-70deg);
+}
+
+/*按钮*/
+.circle button {
+  cursor: pointer;
+  position: absolute;
+  /*定位按钮*/
+  top: 50%;
+  left: 50%;
+  /*大盒子的一半*/
+  height: 100px;
+  background: transparent;
+  border: 0;
+}
+
+/* 按钮获取焦点时，清楚轮廓线 */
+.circle button:focus {
+  outline: none;
+}
+
+/*开*/
+.circle button#open {
+  left: 60%;
+}
+
+/*关*/
+.circle button#close {
+  top: 60%;
+  /*顺时针90度*/
+  transform: rotate(90deg);
+  /*旋转中心左上角*/
+  transform-origin: top left;
+}
+
+/*导航栏*/
+nav {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  z-index: 100;
+}
+
+/*导航栏显示，初始化li*/
+.container.show-nav+nav li {
+  transform: translateX(0);
+  transition-delay: 0.3s;
+}
+
+nav ul {
+  list-style-type: none;
+  padding-left: 30px;
+}
+
+nav ul li {
+  text-transform: uppercase;
+  color: #fff;
+  margin: 40px 0;
+  transform: translateX(-100%);
+  transition: transform 0.4s ease-in;
+}
+
+/*第二个li*/
+nav ul li:nth-child(2) {
+  margin-left: 15px;
+  transform: translateX(-150%);
+}
+
+/*第三个li*/
+nav ul li:nth-child(3) {
+  margin-left: 30px;
+  transform: translateX(-200%);
+}
+
+/*a标签样式*/
+nav a {
+  color: #fafafa;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+
+nav a:hover {
+  color: #ff7979;
+  font-weight: bold;
+}

@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #516dff;
+  color: #fff;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+  text-align: center;
+}
+
+a {
+  color: #fff;
+}
+
+h1 {
+  line-height: 1.4;
+}
+
+.btn {
+  border: 0;
+  background-color: #fff;
+  color: #516dff;
+  padding: 15px 20px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:focus {
+  outline: 0;
+}
+
+/* 页面 */
+.screen {
+  /* 占满一个屏幕 */
+  height: 100vh;
+  width: 100vw;
+  /* 水平垂直居中 */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  transition: margin 0.5s ease-out;
+}
+
+/* 向上滑动 */
+.screen.up {
+  margin-top: -100vh;
+}
+
+/* 昆虫选择列表 */
+.insects-list {
+  display: flex;
+  flex-wrap: wrap;
+  list-style: none;
+  justify-content: center;
+}
+
+.insects-list li {
+  margin: 10px;
+}
+
+.choose-insect-btn {
+  background-color: transparent;
+  border: 2px solid #fff;
+  color: #fff;
+  cursor: pointer;
+  width: 150px;
+  height: 150px;
+}
+
+/* 选择按钮 */
+.choose-insect-btn:hover {
+  background-color: #fff;
+  color: #516dff;
+}
+
+
+.choose-insect-btn:active {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+/* 昆虫图片 */
+.choose-insect-btn img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+/* 游戏界面 */
+.game-container {
+  position: relative;
+}
+
+/* 时间与分数 */
+.time,
+.score {
+  position: absolute;
+  top: 20px;
+}
+
+.time {
+  left: 20px;
+}
+
+.score {
+  right: 20px;
+}
+
+/* 消息提示 */
+.message {
+  line-height: 1.7;
+  background-color: rgba(0, 0, 0, 0.5);
+  width: 100%;
+  padding: 20px;
+  z-index: 100;
+  text-align: center;
+  
+  position: absolute;
+  top: 0;
+  left: 50%;
+  /* 水平居中，垂直隐藏 */
+  transform: translate(-50%, -150%);
+  opacity: 0;
+}
+
+/* 显示 */
+.message.visible {
+  transform: translate(-50%, 150%);
+  opacity: 1;
+}
+
+/* 随机的昆虫 */
+.insect {
+  cursor: pointer;
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100px;
+  width: 100px;
+  position: absolute;
+  /* 按照中心位置进行显示 */
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.3s ease-in-out;
+}
+
+.insect img {
+  width: 100px;
+  height: 100px;
+  /* transform: rotate(90deg); */
+}
+
+.insect.caught {
+  transform: translate(-50%, -50%) scale(0);
+}

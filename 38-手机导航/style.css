@@ -1,0 +1,80 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: rgba(155, 89, 182, 0.7);
+  /* 水平垂直居中 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+}
+
+/* 手机盒子 */
+.phone {
+  position: relative;
+  overflow: hidden;
+  width: 340px;
+  height: 600px;
+  border: 3px solid #eee;
+  border-radius: 15px;
+
+}
+
+/* 图片内容 */
+.phone .content {
+  opacity: 0;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* 动态计算：减去底部导航栏 */
+  height: calc(100% - 60px);
+}
+
+/* 显示图片 */
+.phone .content.show {
+  opacity: 1;
+}
+
+/* 底部导航栏 */
+nav {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  margin-top: -5px;
+  width: 100%;
+
+}
+
+nav ul {
+  background-color: #fff;
+  display: flex;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  height: 60px;
+
+}
+
+nav li {
+  color: #777;
+  cursor: pointer;
+  /* 弹性宽度 */
+  flex: 1;
+  padding: 10px;
+  text-align: center;
+}
+
+nav ul li p {
+  font-size: 12px;
+  margin: 2px 0;
+}
+
+/* li被触摸 或者 被选中 */
+nav ul li:hover,
+nav ul li.active {
+  color: #8e44ad;
+}
