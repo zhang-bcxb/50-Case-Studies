@@ -6,6 +6,7 @@
 ```
 克隆项目代码：
 git clone https://github.com/zhang-bcxb/50-Case-Studies.git
+git clone https://gitee.com/zhang_jinquan/50-case-studies.git
 
 下载完，然后解压压缩包，建议使用 VSCode 进行运行
 由于里面发送了一些请求，需要开启服务器
