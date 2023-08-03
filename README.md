@@ -1,6 +1,6 @@
 # 50-Case-Studies
-项目介绍：50个案例代码分析
-B 站演示地址：https://www.bilibili.com/video/BV1qz4y1s7u1
+- 项目介绍：50个案例代码分析
+- B 站演示地址：https://www.bilibili.com/video/BV1qz4y1s7u1
 
 - 运行说明
 ```
