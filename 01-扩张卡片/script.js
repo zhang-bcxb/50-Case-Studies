@@ -1,29 +1,16 @@
-// 获取面板盒子
-const panels = document.querySelectorAll('.panel')
+// 获取所有.item元素
+let items = document.querySelectorAll('.item')
 
-// 给每个面板绑定事件
-panels.forEach((panel) => {
-  panel.addEventListener('click', () => {
-    console.log(panel)
-    // 移除样式
-    removeActiveClass()
-    // 添加样式
-    panel.classList.add('active')
+// 设置选中态样式
+function setActive() {
+  // 遍历所有.item元素，移除active样式
+  items.forEach((item) => {
+    item.classList.remove('active')
   })
+  // 为当前选中项添加active样式
+  this.classList.add('active')
+}
+// 遍历所有.item元素，分别为其设置点击事件
+items.forEach((item) => {
+  item.addEventListener('click', setActive)
 })
-
-// 移除样式方案一
-function removeActiveClass() {
-  panels.forEach((panel) => {
-    panel.classList.remove('active')
-  })
-}
-
-// 移除样式方案二
-function removeActiveClass2() {
-  panels.forEach((item) => {
-    console.log(item)
-    // true 就会存进数组，即不是当前的盒子，就会存入数组（排除当前点击的盒子）
-    ;[].filter.call(item.parentElement.children, (el) => el !== item).forEach((el) => el.classList.remove('active'))
-  })
-}

@@ -9,15 +9,21 @@
 </head>
 
 <body id="body">
+  <!-- 中英文切换按钮 -->
+  <div id="tab-container" class="tab-container">
+    <div class="tab-item" data-value="en">英文</div>
+    <div class="tab-item active" data-value="zh">中文</div>
+  </div>
+
   <!-- 第一屏-开始页面 -->
   <div class="screen">
-    <h1>捉虫</h1>
+    <h1 id="text-first">捉虫</h1>
     <button class="btn" id="start-btn">开始游戏</button>
   </div>
 
   <!-- 第二屏-昆虫选择页面 -->
   <div class="screen">
-    <h1>哪个是你最喜欢的虫子</h1>
+    <h1 id="text-second">哪个是你最喜欢的虫子</h1>
     <ul class="insects-list">
       <li>
         <button class="choose-insect-btn">
@@ -48,14 +54,19 @@
 
   <!-- 第三屏-游戏界面 -->
   <div class="screen game-container" id="game-container">
-    <h3 id="time" class="time">Time:00:00</h3>
-    <h3 id="score" class="score">Score:0</h3>
+    <div id="mask"></div>
+    <h3 id="time" class="time"><span id="text-time">时间：</span><span>00:00</span></h3>
+    <h3 id="score" class="score"><span id="text-score">分数：</span><span>0</span></h3>
     <h5 id="message" class="message">
-      你气不气？<br>
-      你正在玩一个不会结束的游戏！！
+      <p id="text-message">你会不会生气呢?<br/>其实你在玩一个永远都不结束的游戏!!</p>
+      <div>
+        <button class="btn continue-btn" id="continue">继续玩</button>
+        <button class="btn restart-btn" id="restart">重新玩</button>
+      </div>
     </h5>
   </div>
 </body>
+<script src="data.js"></script>
 <script src="script.js"></script>
 
 </html>

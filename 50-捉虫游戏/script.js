@@ -52,8 +52,9 @@ choose_insect_btns.forEach((btn) => {
 })
 
 // 开始计数
+let startInterval = null
 function starGame() {
-  setInterval(increaseTime, 1000)
+  startInterval = setInterval(increaseTime, 1000)
 }
 
 // 时间计数器
@@ -68,7 +69,8 @@ function increaseTime() {
   // 三元运算符
   m = m < 10 ? `0${m}` : m
   s = s < 10 ? `0${s}` : s
-  timeEl.innerHTML = `Time:${m}:${s}`
+  // console.log(timeEl.childNodes[1])
+  timeEl.childNodes[1].innerHTML = `${m}:${s}`
   seconds++
 }
 
@@ -102,7 +104,7 @@ function getRandomLocation() {
   // 昆虫显示的区域
   const x = Math.random() * (width - 200) + 100
   const y = Math.random() * (height - 200) + 100
-  console.log(x, y)
+  // console.log(x, y)
 
   return { x, y }
 }
@@ -123,16 +125,96 @@ function addInsects() {
   setTimeout(createInset, 1500)
 }
 
+let mask = document.getElementById('mask')
 // 分数计数器
 function insceaseScore() {
   score++
   // 达到指定分数，显示游戏提示
-  if (score > 19) {
+  if (score == 10) {
     message.classList.add('visible')
+    if (startInterval) {
+      clearInterval(startInterval)
+      mask.classList.add('cover')
+    }
   }
-  if (score > 30) {
-    message.classList.remove('visible')
-  }
+  // if (score > 30) {
+  //   message.classList.remove('visible')
+  // }
+  scoreEl.childNodes[1].innerHTML = `${score}`
+}
 
-  scoreEl.innerHTML = `Score:${score}`
+// 继续游戏 或者 重新开始
+const continueBtn = document.getElementById('continue')
+const restartPlayBtn = document.getElementById('restart')
+continueBtn.addEventListener('click', () => {
+  message.classList.remove('visible')
+  mask.classList.remove('cover')
+  starGame()
+})
+restartPlayBtn.addEventListener('click', () => window.location.reload())
+
+// 中英文切换
+const tabItems = document.querySelectorAll('.tab-container .tab-item')
+const siblings = (el) => [].filter.call(el.parentElement.children, (item) => item !== el)
+let currentLang = 'zh'
+tabItems.forEach((item) => {
+  item.addEventListener('click', () => {
+    item.classList.add('active')
+    siblings(item).forEach((item) => item.classList.remove('active'))
+    currentLang = item.getAttribute('data-value')
+    initLangText()
+  })
+})
+// 初始化文本
+function initLangText() {
+  const initData = globalData[currentLang]
+  const needReplaceTexts = [
+    {
+      node: document.getElementById('text-time'),
+      data: initData.countTime,
+    },
+    {
+      node: document.getElementById('text-score'),
+      data: initData.score,
+    },
+    {
+      node: document.getElementById('text-message'),
+      data: initData.message,
+    },
+    {
+      node: document.getElementById('text-first'),
+      data: initData.firstTitle,
+    },
+    {
+      node: document.getElementById('text-second'),
+      data: initData.secondTitle,
+    },
+    {
+      node: document.getElementById('start-btn'),
+      data: initData.playText,
+    },
+    {
+      node: document.getElementById('continue'),
+      data: initData.continueText,
+    },
+    {
+      node: document.getElementById('restart'),
+      data: initData.restartPlayText,
+    }
+  ]
+  // 按钮中英文切换
+  tabItems.forEach((item) => {
+    const attr = item.getAttribute('data-value')
+    item.textContent = initData[attr]
+  })
+  // 页面文本中英文切换
+  needReplaceTexts.forEach((item) => (item.node.innerText = item.data))
+  // 图片标题
+  document.querySelectorAll('.insects-list li').forEach((item, index) => {
+    // console.log(item.children[0].children[0])
+    const content = item.children[0].children[0]
+    content.innerText = initData.insectNameList[index]
+  })
+  // 标题
+  document.title = initData.documentTitle
 }

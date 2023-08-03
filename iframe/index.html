@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>编程细胞首页</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    * {
+      padding: 0;
+      margin: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    ul {
+      list-style-type: none;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- 屏幕 -->
+  <iframe id="main" src="../main1/index.html" frameborder="0">
+    <h3>浏览器不支持内联框架 iframe </h3>
+  </iframe>
+
+  <!--引导按钮-->
+  <button class="floating-btn">
+    关联按钮
+  </button>
+
+  <!-- SOCIAL PANEL HTML -->
+  <div class="social-panel-container">
+    <div class="social-panel">
+      <p>
+        创建人<a target="_blank" href="https://github.com/zhang-bcxb/50-Case-Studies">编程细胞</a>
+      </p>
+      <button class="close-btn">X</button>
+      <h4>页面关联按钮</h4>
+      <ul>
+        <li>
+          <a href="javascript:;" onclick="homePage('main1')" target="_self">M1</a>
+        </li>
+        <li>
+          <a href="javascript:;" onclick="homePage('main2')" target="_self">M2</a>
+        </li>
+        <li>
+          <a href="javascript:;" onclick="contactMe()" target="_self">联系</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<script src="https://cdn.bootcss.com/limonte-sweetalert2/7.21.1/sweetalert2.all.min.js"></script>
+<script src="script.js"></script>
+
+</html>

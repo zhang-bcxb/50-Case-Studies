@@ -19,13 +19,18 @@ h1 {
   line-height: 1.4;
 }
 
+
 .btn {
-  border: 0;
-  background-color: #fff;
-  color: #516dff;
-  padding: 15px 20px;
-  font-family: inherit;
+  background: linear-gradient(135deg, #dfe0e2 10%, #f6f7f7 90%);
+  outline: none;
+  border-radius: 8px;
+  padding: .8rem 4rem;
+  color: #2396ef;
+  display: inline-block;
+  border: 1px solid transparent;
+  letter-spacing: 2px;
   cursor: pointer;
+  font-size: 18px;
 }
 
 .btn:hover {
@@ -46,7 +51,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   transition: margin 0.5s ease-out;
 }
 
@@ -116,25 +121,40 @@ h1 {
 
 /* 消息提示 */
 .message {
-  line-height: 1.7;
-  background-color: rgba(0, 0, 0, 0.5);
+  transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  background: linear-gradient(to bottom, rgba(0, 0, 0, .4) 10%, rgba(0, 0, 0, .6) 90%);
   width: 100%;
-  padding: 20px;
-  z-index: 100;
-  text-align: center;
-  
+  max-width: 400px;
   position: absolute;
-  top: 0;
   left: 50%;
-  /* 水平居中，垂直隐藏 */
-  transform: translate(-50%, -150%);
+  top: 50%;
+  padding: 2rem;
+  border-radius: 15px;
+  line-height: 2;
   opacity: 0;
+  z-index: 100;
+  display: none;
+  font-size: 20px;
 }
 
-/* 显示 */
+.cover {
+  position: fixed;
+  z-index: 99;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .message.visible {
-  transform: translate(-50%, 150%);
+  transform: translate(-50%, -50%);
   opacity: 1;
+  display: block;
+}
+
+.message .continue-btn {
+  margin: 0.7rem 0;
 }
 
 /* 随机的昆虫 */
@@ -160,4 +180,36 @@ h1 {
 
 .insect.caught {
   transform: translate(-50%, -50%) scale(0);
+}
+
+/* 中英文切换按钮 */
+.tab-container {
+  position: absolute;
+  left: 50%;
+  bottom: 10px;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 99;
+}
+
+.tab-container .tab-item {
+  padding: .6rem 1rem;
+  background: linear-gradient(135deg, #f1f1f1 10%, #ffffff 90%);
+  color: #2396ef;
+  cursor: pointer;
+}
+
+.tab-container .tab-item:hover,
+.tab-container .tab-item.active {
+  background: linear-gradient(135deg, #6a92e9 10%, #2b11c4 90%);
+  color: #fff;
+}
+
+.tab-container .tab-item:first-of-type {
+  border-radius: 4px 0 0 4px;
+}
+
+.tab-container .tab-item:last-of-type {
+  border-radius: 0 4px 4px 0;
 }

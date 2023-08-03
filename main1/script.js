@@ -116,7 +116,7 @@ const addCardHtml = async (index) => {
     .then((res) => res.json())
     .then((data) => {
       // 处理解析后的 JSON 数据
-      console.log(data)
+      // console.log(data)
       let cardHtml = ''
       for (let i = 0; i < data.length; i++) {
         cardHtml += `
@@ -124,7 +124,7 @@ const addCardHtml = async (index) => {
           <img src="../${data[i].projectName}/${data[i].projectImg}" />
           <div>
             <h2>第 ${index * 10 + i + 1} 个案例</h2>
-            <h3 style="margin-top: 20px;">密码长度改变图片模糊</h3>
+            <h3 style="margin-top: 20px;">${data[i].projectName.slice(3)}</h3>
             <a href="../${data[i].projectName}/index.html">查看效果</a>
           </div>
         </div>

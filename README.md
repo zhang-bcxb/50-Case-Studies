@@ -1,6 +1,22 @@
 # 50-Case-Studies
 项目介绍：50个案例代码分析
 
+- 运行说明
+```
+克隆项目代码：
+https://github.com/zhang-bcxb/50-Case-Studies.git
+
+下载完，然后解压压缩包，建议使用 VSCode 进行运行
+由于里面发送了一些请求，需要开启服务器
+运行方式一：使用 VSCode，下载一个 Live Server 插件进行运行
+运行方式二：使用 NodeJS，下载一个 live-server 插件进行运行
+
+运行首页有三个，推荐使用第三个（关联了第一个和第二个）
+第一个：main1/index.html
+第二个：main2/index.html
+第三个：iframe/index.html
+```
+
 - 卡片展示【main1】
 
 ![](img/index1.png)

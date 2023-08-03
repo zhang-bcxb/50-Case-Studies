@@ -30,6 +30,7 @@ body {
   position: absolute;
   top: 0;
   left: 0;
+  width: 100%;
   /* 动态计算：减去底部导航栏 */
   height: calc(100% - 60px);
 }
