@@ -86,9 +86,9 @@ form.addEventListener('submit', (e) => {
   // 阻止默认事件
   e.preventDefault()
   // 获取数据的数据
-  const user = search.value || 'itheima2017'
+  const user = search.value || 'zhang-bcxb'
 
-  // 判断用户是否存在
+  // 判断用户是否存在zhang-bcxb
   if (user) {
     getUser(user)
     search.value = ''
