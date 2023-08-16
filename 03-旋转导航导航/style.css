@@ -96,8 +96,9 @@ body {
 nav {
   position: fixed;
   bottom: 40px;
-  left: 0;
+  left: -50px;
   z-index: 100;
+  transition: 0.2s;
 }
 
 /*导航栏显示，初始化li*/
@@ -109,6 +110,11 @@ nav {
 nav ul {
   list-style-type: none;
   padding-left: 30px;
+}
+
+.container.show-nav + nav {
+  left: 20px;
+  transition-delay: 0.3s;
 }
 
 nav ul li {
