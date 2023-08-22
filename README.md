@@ -2,7 +2,18 @@
 - 项目介绍：50个案例代码分析
 - B 站演示地址：https://www.bilibili.com/video/BV1qz4y1s7u1
 
+- 项目建议
+```
+代码可能还存在一些 Bug，需要结合大家的力量一起优化
+有问题可以加群和我联系，在群里我的名称也是【编程细胞】
+山羊圈交流群：347632328
+Web 技术交流群：854197159
+乔木网络交流群：828789351
+哆啦A梦的口袋：688781129
+```
+
 - 运行说明
+
 ```
 克隆项目代码：
 git clone https://github.com/zhang-bcxb/50-Case-Studies.git
@@ -31,10 +42,10 @@ git clone https://gitee.com/zhang_jinquan/50-case-studies.git
 
 ![](img/卡片分区.png)
 
-- 资料汇总-画廊展示.png
+- 资料汇总-画廊展示
 
 ![](img/资料汇总-画廊展示.png)
 
-- 资料汇总-列表展示.png
+- 资料汇总-列表展示
 
 ![](img/资料汇总-列表展示.png)
